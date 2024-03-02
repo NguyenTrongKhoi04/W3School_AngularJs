@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- TODO myApp sẽ là tên ứng dụng -->
+<html ng-app="myApp">
+  <head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.message = "Hello, AngularJS!";
+      });
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <div>{{ message }}</div>
+  </body>
+</html>
+<script>
+  /**
+   * * ng-app là 1 directive (chỉ thị) quan trọng, nó xác định 1 application của AngularJs và phạm vi của app đó
+   * TODO: khi bạn sử dụng trong HTMl, có nghĩa là phần tử là 1 phần của app và chịu sự quản lý của app đó
+   * ? ng-app="myApp" xác định rằng phần HTML này là một phần của ứng dụng AngularJS có tên là "myApp"
+   * ? Directive ng-controller="myCtrl" xác định rằng phần tử <body> là một phần của controller myCtrl
+   * ? Khi run lên, biến "message" sẽ được gán giá trị từ Angular (Hello, AngularJS!) vào "{{ message }}"
+   */
+</script>

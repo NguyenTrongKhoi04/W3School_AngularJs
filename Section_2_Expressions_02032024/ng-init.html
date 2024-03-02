@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+    <div ng-app="" class="contain">
+      <div ng-init="quantity=1;cost=5">
+        <p>Total in dollar: {{ quantity * cost }}</p>
+      </div>
+      <p>Change the value of the input field:</p>
+
+      <p>/////////////////////////////</p>
+      <div ng-init="myCol='lightblue'">
+        <input style="background-color:{{myCol}}" ng-model="myCol" />
+      </div>
+
+      <p>AngularJS resolves the expression and returns the result.</p>
+
+      <p>
+        The background color of the input box will be whatever you write in the
+        input field.
+      </p>
+    </div>
+  </body>
+</html>
+<script>
+  /**
+   * * "ng-init" sẽ khời tạo dữ liệu ban đầu cho biến trong phạm vi của 1 phần tử HTMl
+   * TODO: Khuyến cáo không nên dùng "ng-init", bạn hãy dùng "ng-controller"
+   * ! "ng-init" là viết mã js trong chính các phần tử html do đó điều này phá vỡ nguyên tắc phân tách logic và giao diện 
+   * ? "ng-controller" sẽ khác phục điều này, nó sẽ khai báo biến ở tệp ".js" hoặc khối "<script>...<script>"
+   */
+</script>
