@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJS Directive Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="MyCtrl">
+      <!-- Sử dụng directive để hiển thị nút bấm -->
+      <custom-button
+        button-text="Click me!"
+        button-action="buttonClicked()"
+      ></custom-button>
+    </div>
+    <script>
+      // Khai báo ứng dụng AngularJS
+      var app = angular.module("myApp", []);
+
+      // Định nghĩa directive tùy chỉnh có tên là 'customButton'
+      app.directive("customButton", function () {
+        return {
+          restrict: "E", // Chỉ sử dụng directive như một phần tử
+          scope: {
+            buttonText: "@", // Truyền giá trị từ thuộc tính 'button-text'
+            buttonAction: "&", // Truyền hàm từ thuộc tính 'button-action'
+          },
+          template:
+            '<button ng-click="buttonAction()">{{ buttonText }}</button>',
+        };
+      });
+
+      // Controller để xử lý logic
+      app.controller("MyCtrl", function ($scope) {
+        $scope.buttonClicked = function () {
+          alert("Button clicked!");
+        };
+      });
+    </script>
+  </body>
+</html>

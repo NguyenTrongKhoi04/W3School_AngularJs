@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+
+
+    <div ng-app="myApp" w3-test-directive></div>
+    <!-- <w3-test-directive ng-app="myApp"></w3-test-directive>  -->
+        <!-- ? cái như nhau -->
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.directive("w3TestDirective", function () {
+        return {
+          template: "I was made in a directive constructor!",
+        };
+      });
+      /**
+       * * Đọc thêm ở https://www.w3schools.com/angular/angular_ref_directives.asp
+       */
+    </script>
+  </body>
+</html>

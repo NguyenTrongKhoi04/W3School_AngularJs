@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS Directive Example</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body>
+    <!-- TODO thuộc tính restrict được sử dụng khi định nghĩa một directive để xác định cách directive sẽ được áp dụng trong HTML -->
+    <!-- Directive được áp dụng như một phần tử (element) -->
+    <my-directive-element></my-directive-element>
+
+    <!-- Directive được áp dụng như một thuộc tính (attribute) -->
+    <div my-directive-attribute></div>
+
+    <!-- Directive được áp dụng như một lớp (class) -->
+    <div class="my-directive-class"></div>
+
+    <!-- Directive được áp dụng như một ghi chú (comment) -->
+    <!-- directive: my-directive-comment -->
+
+    <script>
+      /**
+       * TODO: nhìn vào phần class - "restrict: "C" " sẽ hiểu
+       */
+      var app = angular.module("myApp", []);
+
+      // Directive được áp dụng như một phần tử (element)
+      app.directive("myDirectiveElement", function () {
+        return {
+          restrict: "E",
+          template: "<div>This is my directive applied as an element</div>",
+        };
+      });
+
+      // Directive được áp dụng như một thuộc tính (attribute)
+      app.directive("myDirectiveAttribute", function () {
+        return {
+          restrict: "A",
+          template: "<div>This is my directive applied as an attribute</div>",
+        };
+      });
+
+      /**
+       * Directive được áp dụng như một lớp (class),
+       * ? đoạn mã HTML '<div class="alert alert-success">This is my directive applied as a class in Bootstrap</div>'
+       * ?     trong template của directive sẽ thay thế cho một phần tử HTML có lớp CSS my-directive-class.
+       */
+      app.directive("myDirectiveClass", function () {
+        return {
+          restrict: "C",
+          template:
+            '<div class="alert alert-success">This is my directive applied as a class in Bootstrap</div>',
+        };
+      });
+
+      // Directive được áp dụng như một ghi chú (comment)
+      app.directive("myDirectiveComment", function () {
+        return {
+          restrict: "M",
+          template: "<div>This is my directive applied as a comment</div>",
+        };
+      });
+    </script>
+  </body>
+</html>

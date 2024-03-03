@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ! ko nên dùng ng-init để khởi tạo giá trị -->
+    <div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+      <p>Looping with ng-repeat:</p>
+      <ul>
+        <!-- ? "x" là từng item của arr -->
+        <li ng-repeat="x in names">{{ x }}</li>
+      </ul>
+
+      <!-- TODO Ví dụ 2 -->
+      <div
+        ng-init="names2=[
+                  {name:'Jani',country:'Norway'},
+                  {name:'Hege',country:'Sweden'},
+                  {name:'Kai',country:'Denmark'}]"
+      >
+        <ul>
+          <li ng-repeat="x in names2">{{ x.name + ', ' + x.country }}</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- <script>
+  TODO Tương ứng với đoạn code sau
+  // Dữ liệu cần hiển thị
+  var names = ["Jani", "Hege", "Kai"];
+
+  // Lặp qua mảng names và tạo các phần tử li tương ứng
+  var ul = document.getElementById("nameList");
+  names.forEach(function (name) {
+    var li = document.createElement("li");
+    li.textContent = name;
+    ul.appendChild(li);
+  });
+</script> -->
