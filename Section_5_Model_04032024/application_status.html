@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form ng-app="myApp" name="myForm" ng-controller="myCtrl">
+      <input type="text" name="userEmail" ng-model="userEmail_Connection" />
+
+      <!-- * display status -->
+      <p>Valid: {{myForm.userEmail.$valid}} (if true, the value meets all criteria).</p>
+      <p>Dirty: {{myForm.userEmail.$dirty}} (if true, the value has been changed).</p>
+      <p>Touched: {{myForm.userEmail.$touched}} (if true, the field has been in focus).</p>
+      <p>Pristine: {{myForm.userEmail.$pristine}} (if true, the user changed or touched).</p>
+
+    </form>
+
+    <script>
+      var app = angular.module("myApp", []);
+
+      app.controller("myCtrl", ($scope) => {
+        $scope.userEmail_Connection = "khoi";
+      });
+    </script>
+  </body>
+</html>
