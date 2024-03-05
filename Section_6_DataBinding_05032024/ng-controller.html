@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- TODO Click h1 thì sẽ biến đổi giá trị thẻ h1 -->
+    <div class="app" ng-app="myApp" ng-controller="myCtrl">
+      <h1 ng-click="changeName()">{{name}}</h1>
+    </div>
+    <script>
+      var app = angular.module("myApp", []);
+
+      app.controller("myCtrl", ($scope) => {
+        $scope.name = "khoi";
+        /**
+         * ! Chỉ nhận hàm đc khai báo qua biến (ko làm theo =>> khai báo nhưng k gọi đc)
+         */
+        $scope.changeName = function () {
+          $scope.name = "khoi dep zai";
+        };
+      });
+    </script>
+  </body>
+</html>
