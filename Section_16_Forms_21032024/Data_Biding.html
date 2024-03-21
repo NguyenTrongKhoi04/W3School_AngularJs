@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../AngularJS_File.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <input type="text" ng-model="name">
+        <h3>your name is: {{name}}</h3>
+    </div>
+    <script>
+        angular.module("myApp", []).controller("myCtrl", $scope => {
+            $scope.name = "John Doe";
+        });
+    </script>
+</body>
+</html>

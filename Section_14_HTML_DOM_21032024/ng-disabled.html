@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../AngularJS_File.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div ng-app="" ng-init="mySwitch=true"> // không nên dùng ng-init -->
+    <div ng-app="myApp" ng-controller="myCtrl"> 
+        <p>
+            <!-- <button ng-disabled="{{false}}">Click Me!</button> -->
+            <button ng-disabled="mySwitch">Click Me!</button>
+        </p>
+        <p><input type="checkbox" ng-model="mySwitch" />Button</p>
+        <p>{{ mySwitch }}</p>
+    </div>
+    <script>
+        angular.module( "myApp", [] ).controller("myCtrl", $scope => {
+                $scope.mySwitch = true;
+        })
+        /**
+         * ? cơ chế hoạt động của đoạn code trên
+         * Nếu nút checkbox được tích =>> biến "mySwitch" có giá trị là True và ngược lại
+         * ! nếu là giá trị true => <p><button disabled>Click Me!</button></p>
+         * ! là giá trị false => <p><button>Click Me!</button></p>
+         */
+    </script>
+  </body>
+</html>

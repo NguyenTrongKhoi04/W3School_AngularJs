@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../AngularJS_File.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h2 ng-mousemove="number = number + 1">Mouse over me, number increase</h2>
+        <p>Number: {{number}}</p>
+
+        <h2 ng-click="count = count + 1">Click me, count increase</h2>
+        <p>Count: {{count}}</p>
+
+        <h2 ng-click="func_Click()">Click me, count increase (use func)</h2>
+        <p>Count: {{count_FuncClick}}</p>
+    </div>
+    <script>
+        angular.module("myApp",[]).controller("myCtrl",$scope=>{
+            $scope.number = 0;
+            $scope.count = 0;
+            $scope.count_FuncClick = 0;
+            $scope.func_Click = function (){
+                $scope.count_FuncClick ++;
+            };
+        });
+    </script>
+</body>
+</html>

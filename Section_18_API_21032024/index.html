@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../AngularJS_File.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h2>Test uppercase</h2>
+        <p>{{string1}}</p>
+        <p>{{string2}}</p>
+
+        <h2>Test lowercase</h2>
+        <p>{{string3}}</p>
+        <p>{{string4}}</p>
+
+        <h2>Test isNumber</h2>
+        <p>"john" is number: {{string5}}</p>
+    </div>
+    <script>
+        angular.module("myApp",[]).controller("myCtrl", $scope => {
+            $scope.string1 = "khoi";
+            $scope.string2 = angular.uppercase($scope.string1);  // Convert string to upper case
+
+            $scope.string3 = "JHON";
+            $scope.string4 = angular.lowercase($scope.string1);  // Convert string to upper case
+
+            $scope.string5 = angular.isNumber($scope.string4);
+        })
+    </script>
+</body>
+</html>

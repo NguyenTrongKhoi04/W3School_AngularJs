@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<script>
+var app = angular.module("myShoppingList", []); 
+app.controller("myCtrl", function($scope) {
+    $scope.products = ["Milk", "Bread", "Cheese"];
+});
+/**
+ * Step 1. Getting Started:
+      Start by making an application called myShoppingList, and add a controller named myCtrl to it.
+      The controller adds an array named products to the current $scope.
+      In the HTML, we use the ng-repeat directive to display a list using the items in the array.
+ */
+</script>
+
+<div ng-app="myShoppingList" ng-controller="myCtrl">
+  <ul>
+    <li ng-repeat="x in products">{{x}}</li>
+  </ul>
+</div>
+
+<p>So far we have made an HTML list based on the items of an array.</p>
+
+</body>
+</html>

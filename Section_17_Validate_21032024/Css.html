@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../AngularJS_File.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.input1.ng-invalid {
+    background-color:pink;
+}
+.input1.ng-valid {
+    background-color:lightgreen;
+}
+.form1.ng-pristine {
+    background-color:lightblue;
+}
+.form1.ng-dirty {
+    background-color:pink;
+}
+</style>
+<div ng-app="">
+
+<p>Try writing in the input field:</p>
+<form name="myForm">
+<input name="myName" class="input1" ng-model="myName" required>
+</form>
+<p>The input field requires content, and will therefore become green when you write in it.</p>
+
+<br>
+
+<form name="myForm" class="form1">
+<p>Try writing in the input field:</p>
+<input name="myName1" ng-model="myName1" required>
+<p>The form gets a "ng-dirty" class when the form has been modified, and will therefore turn pink.</p>
+</form>
+
+</div>
+</body>
+</html>
